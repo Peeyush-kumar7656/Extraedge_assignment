@@ -1,13 +1,3 @@
-// import React from 'react'
-// import { useHistory } from 'react-router'
-// export const Logout = () => {
-//     let history = useHistory();
-//     return (
-//         <div className="logot">
-//         <button className="logout" onClick={history.goBack}>Logout</button>
-//         </div>
-//     )
-// }
 import React, { useState } from "react";
 import { useHistory } from "react-router";
 import UpcomingWeather from "./UpcomingWeather";
@@ -31,15 +21,12 @@ function Logout() {
   let history = useHistory();
  
   const search = (evt) => {
-    // if (evt.key === "Enter") {
     fetch(`${api.base}weather?q=${query}&units=metric&APPID=${api.key}`)
       .then((res) => res.json())
       .then((result) => {
         setWeather(result);
-        // setQuery("");
         console.log(result);
       });
-    // }
   };
 
   const dateBuilder = (d) => {
@@ -93,8 +80,7 @@ function Logout() {
             value={query}
             onChange={(e) => setQuery(e.target.value)}
             onClick={search}
-            // onKeyPress={search}
-          >
+            >
             <option>---Select---</option>
             <option>Kolkata</option>
             <option>Mumbai</option>
@@ -105,6 +91,7 @@ function Logout() {
             <option>Hyderabad</option>
             <option>Australia</option>
             <option>Antarctica</option>
+            <option>London</option>
           </select>
         </div>
         {typeof weather.main !== "undefined" ? (

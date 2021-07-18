@@ -28,7 +28,6 @@ class UpcomingWeatherCardContainer extends React.Component {
   };
 
   getWeather = () => {
-    // OpenWeather Info
 
     const openWeatherKey = "faa3b9d358ff0e05601c8ec6ea446ef5";
     const weatherUrl = "https://api.openweathermap.org/data/2.5/forecast";
@@ -54,8 +53,6 @@ class UpcomingWeatherCardContainer extends React.Component {
     let fiveDayAPIDataList = this.state.fiveDayAPI.list;
     let weatherTypes = [[], [], [], [], []];
 
-    // create forecast obbject & upcoming tempratures object
-
     for (let i = 0; i < 5; i++) {
       fiveDayForecast.push({
         dayOfWeek: "",
@@ -64,12 +61,9 @@ class UpcomingWeatherCardContainer extends React.Component {
         maxTemp: "N/A"
       });
     }
-
-    // loops through everyday from the data
     if (fiveDayAPIDataList)
       for (let i = 0; i < fiveDayAPIDataList.length; i++) {
         if (fiveDayAPIDataList[i].dt > currentDate + 93600 * currentDayIndex) {
-          // adding data into fiveDayForecast object
           fiveDayForecast[currentDayIndex].dayOfWeek = this.getDays(
             fiveDayAPIDataList[i].dt * 1000
           );
@@ -77,8 +71,6 @@ class UpcomingWeatherCardContainer extends React.Component {
           currentDayIndex++;
           if (currentDayIndex > 4) break;
         }
-
-        // set max temprature
         if (
           fiveDayAPIDataList[i].main.temp_max >
             fiveDayForecast[currentDayIndex].maxTemp ||
@@ -88,7 +80,6 @@ class UpcomingWeatherCardContainer extends React.Component {
             fiveDayAPIDataList[i].main.temp_max;
         }
 
-        // set min temprature
         if (
           fiveDayAPIDataList[i].main.temp_min <
             fiveDayForecast[currentDayIndex].minTemp ||
@@ -98,13 +89,10 @@ class UpcomingWeatherCardContainer extends React.Component {
             fiveDayAPIDataList[i].main.temp_min;
         }
 
-        // grab all weather types and push into seperate arrays for different days
         weatherTypes[currentDayIndex].push(
           fiveDayAPIDataList[i].weather[0].description
         );
       }
-
-    //set the state with the 5 day forecast
     this.setState({
       fiveDayForecastState: fiveDayForecast
     });

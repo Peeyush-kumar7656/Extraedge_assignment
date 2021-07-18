@@ -1,0 +1,133 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+p.day-of-week {
+  font-size: 2rem;
+}
+body {
+  font-family: "Lobster", cursive;
+}
+div.body {
+  float: left;
+}
+div.upcoming-weather-card {
+  margin-left: 75%;
+  /* margin-right: 15px; */
+  color: #fff;
+  font-size: 0.9rem;
+  font-weight: bolder;
+}
+.app {
+  background-image: url("https://www.findingtheuniverse.com/wp-content/uploads/2017/01/Blue2Bhour2BFinland_by_Laurence2BNorah.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.4 ease;
+}
+
+.app.warm {
+  background-image: url("https://dutchreview.com/wp-content/uploads/landscape-2459981_1280-696x464.jpg");
+}
+
+main {
+  min-height: 100vh;
+  background-image: linear-gradient(
+    to bottom,
+    rgba(9, 9, 9, 0.1),
+    rgba(9, 9, 9, 0.59)
+  );
+
+  padding: 25px;
+}
+
+.search-box {
+  width: 100%;
+  margin: 0 0 75px;
+  align-content: center;
+}
+
+.search-box .search-bar {
+  display: block;
+  width: 60%;
+  padding: 15px;
+  margin-left: 30px;
+  border: none;
+  outline: none;
+
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 0px 0px 16px 16px;
+  margin-top: 3.5px;
+
+  box-shadow: 1.6px 5px rgba(0, 0, 0, 0.3);
+
+  color: #313131;
+  font-size: 20px;
+
+  transition: 0.4s ease-in-out;
+}
+
+.search-box .search-bar:hover {
+  background-color: rgba(255, 255, 255, 0.75);
+  transform: translate(50px);
+}
+
+.location-box .location {
+  color: #fff;
+  font-size: 32px;
+  font-weight: 500;
+  text-align: center;
+  text-shadow: 3px 3px rgba(50, 50, 70, 0.5);
+}
+
+.location-box .date {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 300;
+  font-style: italic;
+  text-align: center;
+  text-shadow: 2px 2px rgba(50, 50, 70, 0.5);
+}
+
+.weather-box {
+  text-align: center;
+}
+.weather-box .weather {
+  font-family: "Lobster", cursive;
+  color: #fff;
+  font-size: 32px;
+  font-weight: 770;
+  text-shadow: 13px 13px rgba(50, 50, 70, 0.67);
+  margin-bottom: 10px;
+}
+
+.weather-box .temp {
+  position: relative;
+  display: inline-block;
+  margin: 30px auto;
+  background-color: rgba(205, 205, 205, 0.19);
+  border-radius: 20px 0px 20px;
+
+  padding: 15px 25px 10px 23px;
+
+  color: #fff;
+  font-size: 100px;
+  font-weight: 800;
+
+  text-shadow: 12px 16px rgba(50, 50, 70, 0.5);
+  text-align: center;
+  box-shadow: 23px 6px rgba(0, 0, 0, 0.2);
+}
+footer button {
+  bottom: 0;
+  color: white;
+  font-family: "Lobster", cursive;
+  background-color:#228B22;
+  margin-left: 27%;
+}
+div.about{
+  width:100vw;
+  display:inline-block;
+  color: white;
+}
